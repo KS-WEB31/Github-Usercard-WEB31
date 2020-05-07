@@ -11,7 +11,7 @@ const cardsDiv = document.querySelector('.cards');
 function getUserInfo(usernameInfo){
   axios.get(`https://api.github.com/users/${usernameInfo}`)
   .then((response) => {
-    console.log(response);
+    //console.log(response);
     //Step 4
     const newCard = makeCard(response);
     cardsDiv.appendChild(newCard);
@@ -55,7 +55,12 @@ const followersArray = [
   'justsml',
   'luishrd',
   'bigknell',
+  'dryanmas'
 ];
+
+followersArray.forEach((githubHandle) => {
+  getUserInfo(githubHandle);
+})
 
 /*
   STEP 3: Create a function that accepts a single object as its only argument.
