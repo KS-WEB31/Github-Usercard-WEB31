@@ -4,21 +4,25 @@
     https://api.github.com/users/<your name>
 */
 
+//Step 4
 //select cards from html
 const cardsDiv = document.querySelector('.cards');
 
-function getUserInfo(){
-  axios.get('https://api.github.com/users/KirstenS13')
+function getUserInfo(usernameInfo){
+  axios.get(`https://api.github.com/users/${usernameInfo}`)
   .then((response) => {
     console.log(response);
     //Step 4
-    const newCard = cardMaker(response);
+    const newCard = makeCard(response);
     cardsDiv.appendChild(newCard);
   })
   .catch((error) => {
     console.log(`An error occurred: ${error}`)
   })
 }
+
+//create card for myself
+getUserInfo('KirstenS13');
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
