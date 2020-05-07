@@ -17,7 +17,7 @@ function getUserInfo(usernameInfo){
     cardsDiv.appendChild(newCard);
   })
   .catch((error) => {
-    console.log(`An error occurred: ${error}`)
+    console.log(error)
   })
 }
 
@@ -49,7 +49,7 @@ getUserInfo('KirstenS13');
 */
 
 const followersArray = [
-  'ArianaShackleford',
+  'ArianaShackelford',
   'tetondan',
   'dustinmyers',
   'justsml',
